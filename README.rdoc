@@ -1,6 +1,12 @@
-= vox
+= Google Voice
 
-Description goes here.
+There is not currently an api for Google Voice. This lib tries to get around 
+that. Most of this is based on http://github.com/kgautreaux/gvoice-ruby.
+
+== Resources
+
+http://adriel.dynalias.com/blog/?p=252
+http://posttopic.com/topic/google-voice-add-on-development
 
 == Note on Patches/Pull Requests
  
@@ -11,8 +17,4 @@ Description goes here.
 * Commit, do not mess with rakefile, version, or history.
   (if you want to have your own version, that is fine but
    bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
-
-== Copyright
-
-Copyright (c) 2009 Jeff Rafter. See LICENSE for details.
+* Send me a pull request. Bonus points for topic branches
