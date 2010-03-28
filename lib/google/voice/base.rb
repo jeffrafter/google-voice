@@ -28,6 +28,18 @@ module Google
         @curb.perform
         @curb.response_code
       end
+
+      def archive(ids)
+        ids = Array(ids)
+        fields = [ 
+          Curl::PostField.content('_rnr_se', @_rnr_se),
+          Curl::PostField.content('archive', '1')]
+        ids.each{|id| fields << Curl::PostField.content('messages', id)}
+        @curb.http_post(fields)
+        @curb.url = "https://www.google.com/voice/inbox/archiveMessages/"        
+        @curb.perform
+        @curb.response_code
+      end
                 
       def mark(ids, read = true)
         ids = Array(ids)
