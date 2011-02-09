@@ -24,7 +24,8 @@ Gem::Specification.new do |s|
      "lib/google/voice.rb",
      "lib/google/voice/base.rb",
      "lib/google/voice/missed.rb",
-     "lib/google/voice/sms.rb"
+     "lib/google/voice/sms.rb",
+     "lib/google/voice/forwarding.rb"
   ]
   s.homepage = %q{http://github.com/jeffrafter/google-voice}
   s.rdoc_options = ["--charset=UTF-8"]
