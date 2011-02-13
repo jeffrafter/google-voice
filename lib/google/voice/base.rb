@@ -53,6 +53,10 @@ module Google
         @curb.response_code
       end
 
+      def logged_in?
+        return !@_rnr_se.nil?
+      end
+
     private      
       def login
         @curb = Curl::Easy.new('https://www.google.com/accounts/ServiceLoginAuth') do |curl|
