@@ -11,7 +11,7 @@ module Google
         fields = [
           Curl::PostField.content('_rnr_se', @_rnr_se),
           Curl::PostField.content('phoneId', phoneId),
-          Curl::PostField.content('enabled', enabled ? '1' : '0')]
+          Curl::PostField.content('enabled', enabled)]
         @curb.http_post(fields)
 	@curb.response_code
       end
