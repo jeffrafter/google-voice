@@ -17,22 +17,21 @@ module Google
       end
 
       def phones
-        @curb.url = "https://www.google.com/voice/b/0/settings/tab/phones?v=499"        
+        @curb.url = "https://www.google.com/voice/b/0/settings/tab/phones"        
         @curb.http_get
         doc = Nokogiri::XML::Document.parse(@curb.body_str)
         box = doc.xpath('/response/json').first.text
         json = JSON.parse(box)
         phone_list = []
-        json['phoneList'].each do |phoneId|
-          phone = json['phones']["#{phoneId}"]
+        json['phones'].each_pair do |phone_id, phone|
           phone_list << {
-            :id => phoneId,
+            :id          => phone_id,
             :phoneNumber => phone['phoneNumber'],
             :name        => phone['name'],
             :formattedNumber => phone['formattedNumber']
           }
         end      
-        phone_list
+        return phone_list
       end      
 
     end
