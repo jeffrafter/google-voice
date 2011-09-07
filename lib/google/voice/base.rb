@@ -95,7 +95,7 @@ module Google
       end
    
       def set_rnr_se_token
-        @curb.url = "http://www.google.com/voice"
+        @curb.url = "https://www.google.com/voice"
         @curb.perform 
         @_rnr_se = Nokogiri::HTML::Document.parse(@curb.body_str).css('form#gc-search-form').inner_html
         /value="(.+)"/.match(@_rnr_se)
